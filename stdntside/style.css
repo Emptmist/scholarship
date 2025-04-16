@@ -1,0 +1,199 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+:root {
+  --primary-color: #346473;
+  --text-color: #1d1d1d;
+  --bg-color: #f1f1fb;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #fff;
+}
+
+/*the comments are the default settings of this css*/
+.container {
+  width: 100%;
+  min-height: 50vh; /*for responsive height*/
+  display: flex;
+  align-items: left;
+  justify-content: center; 
+}
+.calendar {
+  width: 100%;
+  /*height: 290px; /*wala dapat to*/
+  max-width: 600px;
+  padding: 30px 20px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+.calendar .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+}
+.calendar .header .month {
+  display: flex;
+  align-items: center;
+  font-size: 18px; /*25px*/
+  font-weight: 600;
+  color: #346473;
+}
+.calendar .header .btns {
+  display: flex;
+  gap: 10px;
+}
+.calendar .header .btns .btn {
+  width: 30px; /*50px*/
+  height: 25px; /*40px*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: #fff;
+  background-color: var(--primary-color);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.calendar .header .btns .btn:hover {
+  background-color: #346473;
+  transform: scale(1.05);
+}
+.weekdays {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.weekdays .day {
+  width: calc(100% / 7 - 10px);
+  text-align: center;
+  font-size: 16px; /*16px*/
+  font-weight: 600; 
+}
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.days .day {
+  width: calc(100% / 7 - 10px);
+  height: 40px; /*50px*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px; /*5px*/
+  font-size: 16px; /*16px*/
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: #fff;
+  transition: all 0.3s;
+}
+.days .day:not(.next):not(.prev):hover {
+  color: #fff;
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+}
+.days .day.today {
+  color: #fff;
+  background-color: var(--primary-color);
+}
+.days .day.next,
+.days .day.prev {
+  color: #ccc;
+}
+
+/* dito ung kulay ng highligh pag kiclick ung day*/
+.days .day.highlight {
+  background-color: #346473; /* Choose your highlight color */
+  color: #fff;
+}
+
+/* notif reminderrr styless here at the boottttttooom*/
+.notif{
+  margin-left: 50px;
+}
+
+/*.date{
+  margin-left: 2px;
+}*/
+
+.fontz{
+  font-weight: 450px;
+}
+
+.notif .btn-outline-primary {
+  color: #346473;
+  border-color: #007bff;
+}
+
+.notif .btn-outline-primary:hover {
+  background-color: #346473;
+  color: #fff;
+}
+
+.notif .btn-outline-primary.active {
+  background-color: white;
+  color: #346473;
+}
+
+.notif .notif-con {
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.d-none {
+  display: none !important;
+}
+
+.day {
+  position: relative; /* Required for positioning pseudo-elements */
+}
+
+
+.day.start-highlight::before {
+  content: '';
+  position: absolute;
+  bottom: 4px;               
+  left: 50%;            
+  transform: translateX(-50%); 
+  width: 8px;                
+  height: 8px;               
+  background-color: darkgreen; 
+  border-radius: 50%;
+}
+
+.day.end-highlight::before {
+  content: '';
+  position: absolute;
+  bottom: 4px;              
+  left: 50%;                 
+  transform: translateX(-50%); 
+  width: 8px;               
+  height: 8px; 
+  background-color: darkred; 
+  border-radius: 50%;
+}
+
+
+
+
+
+/* Credits *
+.credits a {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #aaa;
+}
+.credits span {
+  color: var(--primary-color);
+}*/
