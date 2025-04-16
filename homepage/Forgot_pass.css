@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        body {
+            background-color: #25A55F;
+            padding-top: 70px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-fixed {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1030;
+            background-color: rgba(37, 165, 95, 0.8) !important;
+        }
+
+        .float-start {
+            width: 50px;
+        }
+
+        .navbar-brand {
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 22px;
+            font-family: 'Inter';
+            transition: 3ms;
+        }
+
+        .navbar-brand:hover {
+            color: #346473;
+        }
+
+        .active {
+            color: white !important;
+            font-size: 20px;
+            font-family: 'Inter';
+            transition: 3ms;
+        }
+
+        .active:hover {
+            color: #346473 !important;
+        }
+
+        .btn-success {
+            font-size: 18px;
+            font-family: 'Inter';
+            background-color: #346473;
+            border-radius: 50px;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-right: 40px;
+        }
+
+        .btn-success:hover {
+            border: 1px solid rgba(52, 100, 115, 0);
+        }
+
+        .bg-image{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-image: url(bg-cvsu.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center; 
+            width: 1957px;
+            height: 956px;
+            flex-shrink: 0;
+            opacity:0.9;
+        }
+
+        form{
+            height: auto;
+        }
+
+        .form-container {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-radius: 8px;
+            width: auto;
+            margin: 150px auto;
+            justify-content: center;
+            z-index: 1000;
+            position: relative;
+        }
+
+        .form-content {
+            padding: 50px;
+            background-color: white;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px 20px 20px 20px;
+            
+        }
+
+        .imagecontainer img {
+            
+            
+            padding-left:1px;
+            left:0;
+            top:0;
+            border-radius: 20px 0px 0px 20px;
+        }
+
+
+        form label {
+            color: #25A55F;
+            font-family: 'Inter';
+            font-size: 18px;
+            padding-left: 5px;
+        }
+
+        .input-container {
+            position: relative;
+            width: 311px;
+            margin-bottom: 20px;
+        }
+
+        .input-container input {
+            width: 100%;
+            height: 44px;
+            padding: 10px 40px 10px 10px;
+            margin: 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 8px;
+            background-color: #F0F0F0;
+            font-family: Inter;
+        }
+
+        .input-container img {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+        }
+
+        form button {
+            background-color: #346473;
+            color: white;
+            padding: 14px 20px;
+            padding-top: 6px;
+            margin: 8px 0;
+            border: none;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            width: 125px;
+            height: 40px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-family: Inter;
+            
+        }
+
+        form button:hover {
+            background-color: rgba(52, 100, 115, 0.5);
+        }
+
+        a{
+            text-decoration: none;
+            color: #346473;
+        }
+        input[type="checkbox"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ccc;
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: green;
+            border-color: green;
+        }
+
+        input[type="checkbox"]:checked::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 6px;
+            width: 4px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        @media screen and (max-width:980px){
+            .form-container {
+                max-width: 500px;
+                
+            }
+            .imagecontainer {
+                display: none;
+            }
+            .form-content {
+            display: flex;
+            justify-content: center;
+            padding-left: 0px;
+            border-radius: 20px 20px 20px 20px;
+            
+        }
+        }

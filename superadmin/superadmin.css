@@ -1,0 +1,838 @@
+/*Imported Font - Inter*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background: #25A55F;
+    z-index: 100;
+    transition: all 0.5s ease;
+}
+
+.sidebar.close {
+    width: 70px;
+}
+
+.sidebar .home-content {
+    height: 60px;
+    padding-left: 5px;
+    padding-right: 5px; /* Add padding-right to ensure space on the right */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+    position: relative; /* Required for absolute positioning of the menu icon */
+}
+
+
+.home-content .bx-menu {
+    color: #ffffff;
+    font-size: 35px;
+    cursor: pointer;
+    position: absolute;
+    right: 15px; /* Adjust this value to set the distance from the right edge */
+    transition: all 0.5s ease;
+}
+
+.sidebar.close .home-content .bx-menu {
+    right: 15px; /* Adjust this value to set the distance when sidebar is closed */
+}
+
+.home-content .text {
+    font-size: 26px;
+    font-weight: 600;
+    margin-left: auto; /* Push text to the right */
+    padding-right: 20px; /* Add some right padding for spacing */
+}
+
+.sidebar .logo-details {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .logo-details .logo_name {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.2s ease;
+    transition-delay: 0.1s;
+    white-space: nowrap;
+}
+
+.sidebar.close .logo-details .logo_name {
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links {
+    height: 100%;
+    padding: 30px 0 150px 0;
+    overflow: auto;
+}
+
+.sidebar.close .nav-links {
+    overflow: visible;
+}
+
+.sidebar .nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar .nav-links li {
+    position: relative;
+    list-style: none;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li:hover {
+    background: rgba(244, 244, 244, 20%);
+}
+
+.sidebar .nav-links li i {
+    height: 50px;
+    min-width: 70px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sidebar .nav-links li a .link_name {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    transition: all 0.4s ease;
+    white-space: nowrap;
+}
+
+.sidebar.close .nav-links li a .link_name {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links li .sub-menu {
+    padding: 6px 6px 14px 80px;
+    margin-top: -10px;
+    background: #25A55F;
+    display: none;
+}
+
+.sidebar .nav-links li .sub-menu a {
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.1s ease;
+}
+
+.sidebar .nav-links li .sub-menu a:hover {
+    opacity: 1;
+}
+
+.sidebar.close .nav-links li .sub-menu {
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    transition: 0s;
+}
+
+.sidebar.close .nav-links li:hover .sub-menu {
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li .sub-menu .link_name {
+    display: none;
+}
+
+.sidebar.close .nav-links li .sub-menu .link_name {
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+}
+
+.sidebar .nav-links li .sub-menu.blank {
+    opacity: 1;
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links li:hover .sub-menu.blank {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.home-section {
+    position: relative;
+    background: #fff;
+    height: 100vh;
+    left: 260px;
+    width: calc(100% - 260px);
+    transition: all 0.5s ease;
+}
+
+.sidebar.close~.home-section {
+    left: 75px;
+    width: calc(100% - 75px);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar .logo_name, .sidebar .link_name {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .home-section {
+        left: 75px;
+        width: calc(100% - 75px);
+    }
+}
+
+.container-fluid span {
+    color: #25A55F;
+}
+
+.custom-icon {
+    font-size: 2.5rem; /* Adjust size */
+    color: #346473; /* Change color */
+}
+
+hr {
+    margin: 0 auto;
+    border: 1px solid;
+    width: 98%;
+}
+
+/*main content*/
+.main-container1 {
+    margin: 30px 50px 30px 50px;
+    padding: 20px 50px 20px 50px;
+}
+.main-container {
+    margin: 30px 50px 30px 50px;
+    padding: 20px 50px 20px 50px;
+    background-color: #f8f9fa;
+    border: #ebebeb solid 1px;
+    color: #346473;
+    border-radius: 10px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-style {
+    font-weight: bold;
+    font-size: 20px;
+}
+.content-application{
+    float: right;
+}
+.bx,b{
+    color: #346473;
+}
+b{
+    margin-left: 20px;
+}
+
+/* Hide the default file input */
+.custom-file-input {
+    display: none;
+}
+
+/* Style the custom button */
+.custom-file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #25A55F;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-file-label:hover {
+    background-color: #346473;
+}
+
+
+.application-btn{
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+    width: 200px;
+    height: 45px;
+    margin-bottom: 19px;
+}
+.search-input{
+    border-radius: 10px;
+    border: 1px solid #E1E1E1;
+    background: #FFF;
+    text-indent: 20px;
+    font-size: 18px;
+    width: 400px;
+    height: 45px;
+
+}
+
+.bx-search{
+    border-radius: 5px ;
+    background-color: #346473;
+    
+    color: #FFF;
+    
+    padding: 10px;
+}
+.icon-large {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+button{
+    border: none;
+}
+
+
+/* Style for the table */
+table{
+    width: 100%;
+    table-layout: fixed; 
+    border-collapse: collapse;
+}
+
+th{
+    height: 30px;
+}
+th,td{
+    
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+
+/* dashboard main content */
+
+.dash-container {
+    margin: 0px;
+    padding: 30 70px 30px 70px;
+}
+
+.dash-row {
+    padding: 0px 15px 0px 15px;
+}
+
+.dash-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 15px 0px 15px;
+    margin: 10px 0px 15px 0px;
+}
+
+.dash-count {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    width: 600px;
+    border-radius: 5px;
+    background-color: #59b482;
+    padding: 20px 20px 20px 20px;
+}
+
+.dash-icon {
+    font-size: 100px;
+    color: #ffffff;
+}
+
+span {
+    font-size: 20px;
+    font-weight: solid;
+    color: white;
+    padding: 10px 0px 0px 10px;
+}
+
+/* Add this CSS to your stylesheet */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tr.even {
+    background-color: #f8f9fa; /* Light gray */
+}
+
+tr.odd {
+    background-color: #ffffff; /* White */
+}
+
+th {
+    background-color: #25A55F; /* Green */
+    color: white;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #346473;
+}
+
+.pagination a:hover {
+    background-color: #f1f1f1;
+}
+
+.pagination .current-page {
+    background-color: #346473;
+    color: #fff;
+    border: 1px solid #346473;
+}
+
+
+/* for login history */
+
+input[type="date"].input-fieldss {
+    border-radius: 10px;
+    border: 1px solid #E1E1E1;
+    background: #FFF;
+    padding: 10px;
+    font-size: 18px;
+    width: 400px;
+    height: 45px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #707070; /* Ensure the initial text color is applied */
+}
+
+/* Remove conflicting styles that might override the above */
+.input-fieldss select, .input-field input[type="date"] {
+    /* Remove this if causing conflicts */
+    color: #707070;
+}
+
+/* General input styles */
+.input-fieldss input, .input-fieldss select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+/* Focus states */
+.input-fieldss input:focus, .input-fieldss select:focus {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+
+/* Valid date input color */
+.input-fieldss input[type="date"]:valid {
+    color: #333;
+}
+
+
+
+/* tables formatting */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 9px;
+    text-align: left;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+tr.even {
+    background-color: #f8f9fa; 
+}
+
+tr.odd {
+    background-color: #ffffff; 
+}
+tr:hover{
+    background-color: #eeeeee;
+}
+
+th {
+    background-color: #25A55F;
+    color: white;
+}
+
+/* pop upppp*/
+.text-Popup {
+    color: #346473;
+    font-family: Outfit;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+  
+  .lblpoptitle {
+    width: 400px;
+    height: 43px;
+    flex-shrink: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #C4C2C2;
+    padding-left: 15px;
+  }
+  
+
+.lblpoptitle:focus {
+    outline: none;
+    background-color: #e3e3e3;
+    transition: 0.3s;
+}
+  .lblpopbody{
+    color: #26302E;
+    font-family: Outfit;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .post-btn {
+    background-color: #346473;
+    color: white;
+    transition: all 0.4s ease;
+  }
+  
+  .post-btn:hover {
+    background-color: #25A55F;
+    color: white;
+  }
+  
+  .popup {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(136, 136, 136, 0.5);
+    /* Black w/ opacity */
+  }
+  
+  .popup-content2{
+    margin: 7% auto;
+    padding: 20px;
+    width: 800px;
+    height: 700px;
+    border-radius: 10px;
+  }
+
+  .content3{
+    background-color: #ffffff;
+    margin: 1% auto;
+    padding: 2rem;
+    border: 1px solid #888;
+    width: 470px;
+    height: 470px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .text-font{
+    color: #26302E;
+    font-family: Outfit;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Super admin csss*/
+.form-span {
+    font-weight: bold;
+    padding: 5px 0px 5px 10px;
+}
+
+.form-row {
+    margin: 30px 0px 30px 0px;
+}
+
+.form-lbl {
+    padding: 5px 0px 5px 0px;
+    margin: 10px 0px 0px 0px;
+    font-weight: 500;
+}
+
+.form-lbl,
+.form-span {
+    font-size: 18px;
+}
+
+.form-ipt {
+    padding: 5px 5px 5px 10px;
+    background-color: #ffffff;
+    color: gray;
+    border-style: none;
+    border-radius: 7px;
+    font-size: 17px;
+    width: 100%;
+}
+
+.form-ipt:focus {
+    outline: none;
+    background-color: #e3e3e3;
+    transition: 0.3s;
+}
+
+.button {
+    display: inline-block;
+    background-color: #346473;
+    color: #ffffff;
+    padding: 7px 10px 7px 10px;
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+}
+
+.save {
+    text-align: right;
+}
+
+.button:hover {
+    background-color: rgba(52, 100, 115, 0.3);
+    transition: 0.3s;
+}
+
+/*Superadmin Feedback*/
+.feedback-content{
+    float: right;
+}
+
+.bx-search{
+    border-radius: 5px ;
+    background-color: #346473;
+    
+    color: #FFF;
+    
+    padding: 10px;
+}
+
+.category-btn{
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+    width: 200px;
+    height: 45px;
+    margin-bottom: 19px;
+    margin-right: 10px;
+}
+
+.search-feedback2{
+    border-radius: 10px;
+    border: 1px solid #E1E1E1;
+    background: #FFF;
+    text-indent: 20px;
+    font-size: 18px;
+    width: 300px;
+    height: 45px;
+
+}
+
+#feedback-details-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Feedback message and image styling */
+#feedback-message {
+    margin-bottom: 10px;
+}
+
+#feedback-image img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/*sidebar*/
+.right-sidebar {
+    width: 300px;
+    background-color: #ffffff;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed; /* Make the sidebar fixed */
+    right: 0; /* Align it with the right side of the viewport */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-button {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-button h3 {
+    margin: 0;
+    color: #346473;
+    font-size: 25px;
+}
+
+.sidebar-button p {
+    margin: 5px 0 0;
+    color: #777;
+    font-size: 17px;
+}
+
+.update-btn {
+    padding: 12px 30px;
+    background-color: #F34235;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.update-btn:disabled {
+    background-color: gray;
+    color: white; /* Optional: change text color to white */
+    cursor: not-allowed; /* Optional: change cursor to indicate non-interactivity */
+}
+
+.save-btn {
+    padding: 12px 40px 13px 30px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 890px;
+}
+
+.account-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.account-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.account-form input {
+    width: 650px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    
+}
+
+.image-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 10px;
+}
+
+.image-holder img {
+    width: 150px;
+    height: 135px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    margin-top: 15px;
+}   
+
+.nlabel{
+    justify-content: left;
+    font-size: 28px;
+    text-align: left;
+    margin-top: 30px;
+}
+

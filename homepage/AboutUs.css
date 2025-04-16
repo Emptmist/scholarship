@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body{
+    padding-top: 70px;
+    
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.nav-fixed{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: rgba(37, 165, 95, 0.8) !important;
+}
+.float-start{
+    width: 50px;
+}
+.navbar-brand{
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 24px;
+    transition: 3ms;
+}
+.navbar-brand:hover{
+    color:#346473;
+}
+.active{
+    color: white !important;
+    font-size: 20px;
+    transition: 3ms;
+
+}
+.active:hover{
+    color:#346473 !important;
+}
+.btn-success{
+    font-size: 18px;
+    background-color: #346473;
+    border-radius: 50px;
+
+
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-right: 40px;
+
+}
+.btn-success:hover{
+    border: 1px solid rgba(52, 100, 115, 0);
+
+}
+.about-us{
+    background: white;
+    color: #346473;
+}
+.content-AU{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.content-about-us{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.h-about{
+    font-weight: bolder;
+    font-size: 38px;
+
+}
+.about-description{
+    font-weight:300;
+    font-size: 24px;
+}
+.sp{
+    width: 400px;
+}
+.card-bg{
+    width: 288px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    background: #346473;
+}
+
+.card-about-us{
+    color: #26302E;
+    text-align: center;
+    width: 288px;
+    background-color: #FFF;
+    border-radius: 5px;
+    border: 4px solid #FFF;
+    box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.25);
+}
+.card-img{
+    width: 230px;
+    height: 200px; 
+    border-radius: 3px;
+    padding: 10px;
+
+}
+
+.contact{
+    background-color: #346473;
+}
+a{
+    text-decoration: none;
+    color: #FFF;
+}
+.contact-us{
+    margin-top: 24px;
+    background-color: #26302E;
+    height: 303px;
+    font-family: 'Inter';
+    color: white;
+}
+.contact-h{
+    margin-top: 30px;
+    color: #FFFDFD;
+    font-family: 'Inter';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: bolder;
+    line-height: normal;
+}
+
+
+@media screen and (max-width:860px){
+    .h1{
+    font-size: 36px;
+    }
+}
+@media screen and (max-width:1600px){
+    .sp{
+        width: 250px;
+    }
+    .btn-success{
+        font-size: 18px;
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width:1360px){
+    .nav-link{
+    font-size: 16px;
+    }
+    .btn-success{
+        font-size: 16px;
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width:1440px){
+    .btn-success{
+        font-size: 16px;
+        margin-right: 5px;
+    }
+    
+}
