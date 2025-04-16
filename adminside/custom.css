@@ -1,0 +1,599 @@
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background: #25A55F;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.sidebar.close {
+    width: 70px;
+}
+
+.sidebar .home-content {
+    height: 60px;
+    padding-left: 5px;
+    padding-right: 5px; /* Add padding-right to ensure space on the right */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+    position: relative; /* Required for absolute positioning of the menu icon */
+}
+
+.home-content .bx-menu {
+    color: #ffffff;
+    font-size: 35px;
+    cursor: pointer;
+    position: absolute;
+    right: 15px; /* Adjust this value to set the distance from the right edge */
+    transition: all 0.5s ease;
+}
+
+.sidebar.close .home-content .bx-menu {
+    right: 15px; /* Adjust this value to set the distance when sidebar is closed */
+}
+
+.home-content .text {
+    font-size: 26px;
+    font-weight: 600;
+    margin-left: auto; /* Push text to the right */
+    padding-right: 20px; /* Add some right padding for spacing */
+}
+
+.sidebar .logo-details {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .logo-details .logo_name {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.2s ease;
+    transition-delay: 0.1s;
+    white-space: nowrap;
+}
+
+.sidebar.close .logo-details .logo_name {
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links {
+    height: 100%;
+    padding: 30px 0 150px 0;
+    overflow: auto;
+}
+
+.sidebar.close .nav-links {
+    overflow: visible;
+}
+
+.sidebar .nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar .nav-links li {
+    position: relative;
+    list-style: none;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li:hover {
+    background: rgba(244, 244, 244, 20%);
+}
+
+.sidebar .nav-links li i {
+    height: 50px;
+    min-width: 70px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sidebar .nav-links li a .link_name {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    transition: all 0.4s ease;
+    white-space: nowrap;
+}
+
+.sidebar.close .nav-links li a .link_name {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links li .sub-menu {
+    padding: 6px 6px 14px 80px;
+    margin-top: -10px;
+    background: #25A55F;
+    display: none;
+}
+
+.sidebar .nav-links li .sub-menu a {
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.1s ease;
+}
+
+.sidebar .nav-links li .sub-menu a:hover {
+    opacity: 1;
+}
+
+.sidebar.close .nav-links li .sub-menu {
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    transition: 0s;
+}
+
+.sidebar.close .nav-links li:hover .sub-menu {
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li .sub-menu .link_name {
+    display: none;
+}
+
+.sidebar.close .nav-links li .sub-menu .link_name {
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+}
+
+.sidebar .nav-links li .sub-menu.blank {
+    opacity: 1;
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links li:hover .sub-menu.blank {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.home-section {
+    position: relative;
+    background: #fff;
+    height: 100vh;
+    left: 260px;
+    width: calc(100% - 260px);
+    transition: all 0.5s ease;
+    overflow-x: hidden;
+}
+
+.sidebar.close~.home-section {
+    left: 75px;
+    width: calc(100% - 75px);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar .logo_name, .sidebar .link_name {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .home-section {
+        left: 75px;
+        width: calc(100% - 75px);
+    }
+}
+
+.container-fluid .ms-4 {
+    color: #25A55F;
+}
+
+.custom-icon {
+    font-size: 2.5rem; /* Adjust size */
+    color: #346473; /* Change color */
+}
+
+hr {
+    margin: 0 auto;
+    border: 1px solid;
+    width: 98%;
+}
+.pop-icon {
+    font-size: 4rem;
+    color: #346473;
+}
+
+.arrow-icon {
+    bottom: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    font-size: 2rem;
+    color: #346473;
+}
+
+.view{
+    background-color: #f8f9fa;
+    transition: all 0.4s ease;
+}
+
+.view:hover {
+    background-color: #346473;
+    color: white;
+}
+.view i {
+    transition: all 0.4s ease;
+}
+
+.view:hover i{
+    color: white;
+}
+.view {
+    background-color: #f8f9fa;
+    transition: all 0.4s ease;
+}
+
+.view:hover {
+    background-color: #346473;
+    color: white;
+}
+
+.view i {
+    transition: all 0.4s ease;
+}
+
+.view:hover i {
+    color: white;
+}
+
+.view span p {
+    transition: all 0.4s ease;
+}
+
+.view:hover span p {
+    color: white !important;
+}
+
+.announcement {
+    color: white;
+    background-color: #25A55F;
+    transition: all 0.4s ease;
+}
+
+.announcement:hover {
+    background-color: #346473;
+}
+
+.popup {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black w/ opacity */
+}
+
+.popup-content2{
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.title {
+    background-color: #888 ;
+}
+
+.hidden {
+    display: none;
+}
+
+.post-btn {
+    background-color: #346473;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+.post-btn:hover {
+    background-color: #25A55F;
+    color: white;
+}
+
+
+table {
+    margin-top: 2rem;
+}
+
+th {
+    padding-bottom: 2rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: large;
+}
+
+th , td{
+    padding-inline: 2rem; 
+}
+
+td {
+    padding-bottom: 0.5rem;
+    font-size: medium;
+}
+
+.back-btn {
+    background-color: #346473;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: scale(1.1);
+    color: white;
+}
+/*---------------------------css for application-----------------------------*/
+
+.title-page{
+    margin-top: 30px;
+    margin-left: 50px;
+    color: #26302E;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.main-container {
+    margin: 30px 50px 30px 50px;
+    padding: 20px 50px 20px 50px;
+    background-color: #f8f9fa;
+    /* max-height: 670px; */
+    color: #346473;
+    border-radius: 10px;
+    border: #ebebeb solid 1px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-style {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.content-application{
+    float: right;
+}
+.bx,b{
+    color: #346473;
+}
+b{
+    margin-left: 20px;
+}
+.application-btn{
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+    width: 200px;
+    height: 45px;
+    margin-bottom: 19px;
+}
+.search-input{
+    border-radius: 10px;
+    border: 1px solid #E1E1E1;
+    background: #FFF;
+    text-indent: 20px;
+    font-size: 18px;
+    width: 400px;
+    height: 45px;
+
+}
+
+.bx-search{
+    border-radius: 5px ;
+    background-color: #346473;
+    
+    color: #FFF;
+    
+    padding: 10px;
+}
+.icon-large {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+/* Style for the table */
+table{
+    width: 100%;
+    table-layout: fixed; 
+    border-collapse: collapse;
+}
+th,td{
+    
+    padding: 8px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+
+/* Add this CSS to your stylesheet */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tr.even {
+    background-color: #f8f9fa; /* Light gray */
+}
+
+tr.odd {
+    background-color: #ffffff; /* White */
+}
+
+tr:hover{
+    background-color: #eeeeee;
+}
+
+th {
+    background-color: #25A55F; /* Green */
+    color: white;
+}
+
+/* Style for buttons */
+button {
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for 'Approve' button */
+button#approve {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+button#approve:hover {
+    background-color: #8aca8c;
+    color: white;
+}
+
+/* Style for 'reject' button */
+button#reject {
+    background-color: #f44336;
+    color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+button#reject:hover {
+    background-color: #f37e76;
+}
+/* Style for 'Delete' button */
+button#delete_files {
+    background-color: #f44336;
+    color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+.bxs-trash-alt{
+    color: white;
+}
+button#delete_files:hover {
+    background-color: #f37e76;
+}
+
+/* Style for 'View Details' button */
+button#view {
+    background-color: #3B3956;
+    color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+button#view:hover {
+    background-color: #68677e;
+}
+button#pend {
+    background-color: #777683;
+    color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+button#pend:hover {
+    background-color: #68677e;
+}
+
+/* style for students application form */
+
+.button {
+    display: inline-block;
+    background-color: #346473;
+    color: #ffffff;
+    padding: 7px 10px 7px 10px;
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+}
+
+.save {
+    text-align: right;
+}
+
+.button:hover {
+    background-color: rgba(52, 100, 115, 0.3);
+    transition: 0.3s;
+}
+
+/* admin profile*/
+
+.form-num{
+    padding: 5px 5px 5px 10px;
+    background-color: #ffffff;
+    color: gray;
+    border-style: none;
+    border-radius: 7px;
+    font-size: 17px;
+    width: 75%;
+}
+
+.form-num:focus {
+    outline: none;
+    background-color: #e3e3e3;
+    transition: 0.3s;
+}
